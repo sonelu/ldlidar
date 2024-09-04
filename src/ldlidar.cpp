@@ -4,7 +4,8 @@
 #include <string>
 
 #include "rclcpp/rclcpp.hpp"
-#include <ldlidar_node.h>
+
+#include "ldlidar_node.h"
 
 int main(int argc, char * argv[])
 {

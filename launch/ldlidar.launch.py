@@ -7,29 +7,29 @@ from launch_ros.actions import Node
 def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument(
-            name='serial_port', 
-            default_value='',
+            name='serial_port',
+            default_value='/dev/ttyS0',
             description='LD06 Serial Port'
         ),
         DeclareLaunchArgument(
-            name='topic_name', 
+            name='topic_name',
             default_value='scan',
             description='LD06 Topic Name'
         ),
         DeclareLaunchArgument(
-            name='lidar_frame', 
+            name='lidar_frame',
             default_value='laser',
             description='Lidar Frame ID'
         ),
         DeclareLaunchArgument(
-            name='range_threshold', 
+            name='range_threshold',
             default_value='0.005',
             description='Range Threshold'
         ),
         Node(
             package='ldlidar',
             executable='ldlidar',
-            name='ldlidar',
+            name='trilobot_lidar_node',
             output='screen',
             parameters=[
                 {'serial_port': LaunchConfiguration("serial_port")},

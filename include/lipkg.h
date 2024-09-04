@@ -87,7 +87,7 @@ public:
 	bool AssemblePacket();/*combine stantard data into data frames and calibrate*/
 	sensor_msgs::msg::LaserScan GetLaserScan() {return output;}
 	void SetLidarFrame(const std::string lidar_frame) { mLidarFrame = lidar_frame;};
-	void SetRangeThreshold(const float range_threshold) { range_threshold_ = range_threshold;};
+	void SetRangeThreshold(const double range_threshold) { range_threshold_ = range_threshold;};
 private:
 	uint16_t mTimestamp;
 	double mSpeed;
@@ -103,7 +103,7 @@ private:
 	rclcpp::Clock::SharedPtr clock;
     rclcpp::TimeSource timesource;
 	unsigned int beam_size_;
-	float range_threshold_;
+	double range_threshold_;
 };
 #endif
 /********************* (C) COPYRIGHT LD Robot *******END OF FILE ********/
